@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+
+
+:root {
+    --main-background: #111111;
+    --primary-foreground: #ffffff;
+}
+
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+html,
+body {
+    background: var(--main-background);
+    color: var(--primary-foreground);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FiraCode Nerd Font';
+    overflow-x: hidden;
+}
+
+
+
+/* Ensure all content is above the blur background */
+#root {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.hero-bg {
+    position: relative;
+    min-height: 100vh;
+    /* background: linear-gradient(135deg, #0f37bc 0%, #54bafe 100%); */
+    overflow: hidden;
+}
+
+/* Blurred floating shapes */
+.hero-bg .blur-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-bg .blur-blue {
+    width: 500px;
+    height: 500px;
+    background: #2563eb;
+    top: -100px;
+    left: -100px;
+}
+
+.hero-bg .blur-cyan {
+    width: 400px;
+    height: 400px;
+    background: #38bdf8;
+    bottom: 0;
+    right: 0;
+}
+
+.hero-bg .blur-purple {
+    width: 300px;
+    height: 300px;
+    background: #a78bfa;
+    top: 40%;
+    left: 60%;
+}
+
+.hero-bg .blur-light {
+    width: 250px;
+    height: 250px;
+    background: #f0f9ff;
+    bottom: 10%;
+    left: 30%;
+    opacity: 0.3;
+}
+
+/* Glassmorphism card */
+.backdrop-blur-lg {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+}
