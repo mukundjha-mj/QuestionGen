@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import { useLocation } from 'react-router-dom';
+import Logo from '/logo.png';
 
 const Layout = ({ children }) => {
     const navItems = ['Home', 'Services', 'About', 'Contact'];
@@ -30,7 +31,7 @@ const Layout = ({ children }) => {
 
     return (
         <>
-            <Navbar title="QuestionGen" logoSrc={'logo.png'} navItems={navItems} isScrolledToFeatures={isScrolledToFeatures} />
+            <Navbar title="QuestionGen" logoSrc={Logo} navItems={navItems} isScrolledToFeatures={isScrolledToFeatures} />
             <main>{children}</main>
         </>
     );

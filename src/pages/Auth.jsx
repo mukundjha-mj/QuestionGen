@@ -56,7 +56,7 @@ const Auth = () => {
         {activeComponent === 'login' ? (
           <>
             <LoginForm />
-            <div className='flex items-center mt-4 w-full gap-2 justify-center'>
+            <div className='flex flex-col items-center md:justify-between mt-4 md:w-full md:flex-row'>
               <p className='text-white'>Don't have an account?</p>
               <Button
                 label='Create one'
