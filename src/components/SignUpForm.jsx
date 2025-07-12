@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import Input from './Input';
 
-const SignupForm = () => {
+const SignUpForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [response, setResponse] = useState('');
@@ -104,4 +104,4 @@ const SignupForm = () => {
     )
 }
 
-export default SignupForm
+export default SignUpForm
