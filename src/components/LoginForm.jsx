@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import Input from './Input';
+import axios from 'axios';
+
 
 const LoginForm = () => {
     const [email, setEmail] = useState('')
@@ -21,7 +23,7 @@ const LoginForm = () => {
             })
             setResponse(result.data)
             if (result.data) {
-                navigate('/');
+                navigate('/dashboard'); // Redirect to dashboard on successful login
 
             }
         } catch (error) {
@@ -67,7 +69,7 @@ const LoginForm = () => {
                     />
                 </div>
                 <Button
-                    className='w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed'
+                    className='w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl border border-white/20 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer'
                     label={loading ? "Logging in..." : "Login"}
                     onClick={handleSubmit}
                     disabled={loading}

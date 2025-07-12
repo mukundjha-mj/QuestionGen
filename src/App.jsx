@@ -6,6 +6,7 @@ import Layout from './layout/Layout';
 import Services from './pages/Services';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Dashboard from './pages/Dashboard';
 
 
 
@@ -21,6 +22,8 @@ function App() {
           <Route path='/services' element={<Services />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+
           <Route path='*' element={<div>404 Not Found</div>} />
         </Routes>
       </Layout>
