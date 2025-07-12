@@ -9,19 +9,32 @@ const Layout = ({ children }) => {
     const featuresRef = useRef(null);
     const location = useLocation();
 
+    // Debug logging for state changes
     useEffect(() => {
+        console.log('Layout - isScrolledToFeatures changed to:', isScrolledToFeatures);
+    }, [isScrolledToFeatures]);
+
+    useEffect(() => {
+        // Check if device is mobile
+        const isMobile = window.innerWidth <= 768;
+        
         const observer = new IntersectionObserver(
             ([entry]) => {
+                console.log('Intersection observed:', entry.isIntersecting, 'Mobile:', isMobile);
                 setIsScrolledToFeatures(entry.isIntersecting);
             },
             {
-                threshold: 0.84,
+                threshold: isMobile ? 0.1 : 0.84, // Lower threshold for mobile
+                rootMargin: isMobile ? '-50px 0px' : '0px' // Adjust trigger point on mobile
             }
         );
 
         const el = document.querySelector('.features-section');
         if (el) {
             observer.observe(el);
+            console.log('Observer attached to features section');
+        } else {
+            console.log('Features section not found');
         }
 
         return () => {

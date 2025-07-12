@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Auth from './pages/Auth';
 import Layout from './layout/Layout';
 import Services from './pages/Services';
+import About from './pages/About';
+import Contact from './pages/Contact';
 
 
 
@@ -17,6 +19,9 @@ function App() {
           <Route path="/account/login" element={<Auth />} />
           <Route path="/account/signup" element={<Auth />} />
           <Route path='/services' element={<Services />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<div>404 Not Found</div>} />
         </Routes>
       </Layout>
     </BrowserRouter>

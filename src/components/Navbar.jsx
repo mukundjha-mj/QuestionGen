@@ -13,6 +13,7 @@ const Navbar = ({ title, navItems, logoSrc, isScrolledToFeatures }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const buttonBgClass = isScrolledToFeatures ? 'bg-blue-600 text-white' : 'bg-white text-black';
+    const menuBg = isScrolledToFeatures ? 'bg-white/90' : 'bg-slate-900/90';
 
     return (
         <>
@@ -55,9 +56,9 @@ const Navbar = ({ title, navItems, logoSrc, isScrolledToFeatures }) => {
                 
                 {/* Mobile Menu */}
                 {isMenuOpen && (
-                    <div className='md:hidden absolute top-full left-0 right-0 backdrop-blur-md bg-slate-900/90 shadow-lg border-t border-white/10'>
+                    <div className={`md:hidden absolute top-full left-0 right-0 backdrop-blur-md ${menuBg} shadow-lg border-t border-white/10`}>
                         <div className='px-4 py-4'>
-                            <ul className='flex flex-col space-y-4 font-[600] mb-4'>
+                            <ul className='flex flex-col space-y-4  font-[600] mb-4'>
                                 {navItems.map((item, index) => (
                                     <NavItem key={index} lable={item} isScrolledToFeatures={isScrolledToFeatures} onItemClick={() => setIsMenuOpen(false)} />
                                 ))}
