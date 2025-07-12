@@ -23,7 +23,7 @@ const Auth = () => {
           <div
             className={`absolute bottom-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full transition-all duration-300 ${
               activeComponent === 'login' 
-                ? 'left-[12.5%] w-[25 %]' 
+                ? 'left-[12.5%] w-[25%]' 
                 : 'left-[62.5%] w-[25%]'
             }`}
           ></div>
